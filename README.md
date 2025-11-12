@@ -979,6 +979,692 @@ Gracias a todos los [contribuidores](https://github.com/hugooae/Awesome-README-G
 
 ---
 
+## Notas al Pie
+
+Las notas al pie te permiten agregar referencias sin interrumpir el flujo del texto.
+
+#### Cómo se escribe:
+```markdown
+Este es un texto con una nota al pie[^1] y esta es otra nota[^2].
+
+También puedes usar notas con nombres más descriptivos[^nota-larga].
+
+[^1]: Esta es la primera nota al pie.
+[^2]: Esta es la segunda nota al pie.
+[^nota-larga]: Esta es una nota al pie con un nombre descriptivo.
+    Puedes incluir múltiples párrafos en una nota al pie.
+    
+    Simplemente indenta los párrafos adicionales.
+```
+
+#### Cómo se ve:
+
+Este es un texto con una nota al pie[^1] y esta es otra nota[^2].
+
+También puedes usar notas con nombres más descriptivos[^nota-larga].
+
+[^1]: Esta es la primera nota al pie.
+[^2]: Esta es la segunda nota al pie.
+[^nota-larga]: Esta es una nota al pie con un nombre descriptivo. Puedes incluir múltiples párrafos en una nota al pie.
+
+---
+
+## Menciones y Referencias
+
+### Mencionar usuarios
+
+#### Cómo se escribe:
+```markdown
+Gracias a @hugooae por la contribución.
+Este bug fue reportado por @usuario123.
+```
+
+#### Cómo se ve:
+
+Gracias a @hugooae por la contribución.
+Este bug fue reportado por @usuario123.
+
+### Referencias a Issues y Pull Requests
+
+#### Cómo se escribe:
+```markdown
+Esto soluciona el issue #123
+Ver pull request #456
+Relacionado con hugooae/otro-repo#789
+```
+
+#### Cómo se ve:
+
+Esto soluciona el issue #123
+Ver pull request #456
+Relacionado con hugooae/otro-repo#789
+
+### Commits
+
+#### Cómo se escribe:
+```markdown
+Ver commit 16c999e8c71134401a78d4d46435517b2271d6ac
+O la versión corta: 16c999e
+```
+
+#### Cómo se ve:
+
+Ver commit 16c999e8c71134401a78d4d46435517b2271d6ac
+O la versión corta: 16c999e
+
+---
+
+## Diagramas con Mermaid
+
+GitHub soporta diagramas Mermaid directamente en Markdown.
+
+### Diagrama de flujo
+
+#### Cómo se escribe:
+````markdown
+```mermaid
+graph TD;
+    A[Inicio] --> B{Decisión};
+    B -->|Sí| C[Acción 1];
+    B -->|No| D[Acción 2];
+    C --> E[Fin];
+    D --> E;
+```
+````
+
+#### Cómo se ve:
+
+```mermaid
+graph TD;
+    A[Inicio] --> B{Decisión};
+    B -->|Sí| C[Acción 1];
+    B -->|No| D[Acción 2];
+    C --> E[Fin];
+    D --> E;
+```
+
+### Diagrama de secuencia
+
+#### Cómo se escribe:
+````markdown
+```mermaid
+sequenceDiagram
+    participant Usuario
+    participant Servidor
+    participant BaseDatos
+    
+    Usuario->>Servidor: Petición HTTP
+    Servidor->>BaseDatos: Consulta SQL
+    BaseDatos-->>Servidor: Resultados
+    Servidor-->>Usuario: Respuesta JSON
+```
+````
+
+#### Cómo se ve:
+
+```mermaid
+sequenceDiagram
+    participant Usuario
+    participant Servidor
+    participant BaseDatos
+    
+    Usuario->>Servidor: Petición HTTP
+    Servidor->>BaseDatos: Consulta SQL
+    BaseDatos-->>Servidor: Resultados
+    Servidor-->>Usuario: Respuesta JSON
+```
+
+### Diagrama de Gantt
+
+#### Cómo se escribe:
+````markdown
+```mermaid
+gantt
+    title Roadmap del Proyecto
+    dateFormat  YYYY-MM-DD
+    section Fase 1
+    Diseño           :a1, 2025-01-01, 30d
+    Desarrollo       :a2, after a1, 45d
+    section Fase 2
+    Testing          :a3, after a2, 20d
+    Despliegue       :a4, after a3, 10d
+```
+````
+
+#### Cómo se ve:
+
+```mermaid
+gantt
+    title Roadmap del Proyecto
+    dateFormat  YYYY-MM-DD
+    section Fase 1
+    Diseño           :a1, 2025-01-01, 30d
+    Desarrollo       :a2, after a1, 45d
+    section Fase 2
+    Testing          :a3, after a2, 20d
+    Despliegue       :a4, after a3, 10d
+```
+
+### Diagrama de clases
+
+#### Cómo se escribe:
+````markdown
+```mermaid
+classDiagram
+    class Animal {
+        +String nombre
+        +int edad
+        +hacerSonido()
+    }
+    class Perro {
+        +String raza
+        +ladrar()
+    }
+    class Gato {
+        +maullar()
+    }
+    Animal <|-- Perro
+    Animal <|-- Gato
+```
+````
+
+#### Cómo se ve:
+
+```mermaid
+classDiagram
+    class Animal {
+        +String nombre
+        +int edad
+        +hacerSonido()
+    }
+    class Perro {
+        +String raza
+        +ladrar()
+    }
+    class Gato {
+        +maullar()
+    }
+    Animal <|-- Perro
+    Animal <|-- Gato
+```
+
+---
+
+## Tablas Avanzadas
+
+### Tabla con saltos de línea
+
+#### Cómo se escribe:
+```markdown
+| Feature | Descripción |
+|---------|-------------|
+| Feature 1 | Esta es una descripción larga<br>que ocupa múltiples líneas<br>usando `<br>` |
+| Feature 2 | Otra descripción<br>en varias líneas |
+```
+
+#### Cómo se ve:
+
+| Feature | Descripción |
+|---------|-------------|
+| Feature 1 | Esta es una descripción larga<br>que ocupa múltiples líneas<br>usando `<br>` |
+| Feature 2 | Otra descripción<br>en varias líneas |
+
+### Tabla con código y enlaces
+
+#### Cómo se escribe:
+```markdown
+| Método | Descripción | Documentación |
+|--------|-------------|---------------|
+| `GET /api/users` | Obtener todos los usuarios | [Docs](https://docs.api.com) |
+| `POST /api/users` | Crear nuevo usuario | [Docs](https://docs.api.com) |
+| `DELETE /api/users/:id` | Eliminar usuario | [Docs](https://docs.api.com) |
+```
+
+#### Cómo se ve:
+
+| Método | Descripción | Documentación |
+|--------|-------------|---------------|
+| `GET /api/users` | Obtener todos los usuarios | [Docs](https://docs.api.com) |
+| `POST /api/users` | Crear nuevo usuario | [Docs](https://docs.api.com) |
+| `DELETE /api/users/:id` | Eliminar usuario | [Docs](https://docs.api.com) |
+
+---
+
+## Badges Avanzados
+
+### Badges personalizados
+
+#### Cómo se escribe:
+```markdown
+![Custom](https://img.shields.io/badge/custom-badge-blue)
+![Status](https://img.shields.io/badge/status-active-success)
+![Made with](https://img.shields.io/badge/made%20with-❤️-red)
+![Platform](https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-lightgrey)
+```
+
+#### Cómo se ve:
+
+![Custom](https://img.shields.io/badge/custom-badge-blue)
+![Status](https://img.shields.io/badge/status-active-success)
+![Made with](https://img.shields.io/badge/made%20with-❤️-red)
+![Platform](https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-lightgrey)
+
+### Badges dinámicos de GitHub
+
+#### Cómo se escribe:
+```markdown
+![GitHub Repo stars](https://img.shields.io/github/stars/hugooae/Awesome-README-Guide?style=social)
+![GitHub forks](https://img.shields.io/github/forks/hugooae/Awesome-README-Guide?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/hugooae/Awesome-README-Guide?style=social)
+![GitHub contributors](https://img.shields.io/github/contributors/hugooae/Awesome-README-Guide)
+![GitHub issues](https://img.shields.io/github/issues/hugooae/Awesome-README-Guide)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/hugooae/Awesome-README-Guide)
+![GitHub last commit](https://img.shields.io/github/last-commit/hugooae/Awesome-README-Guide)
+![GitHub repo size](https://img.shields.io/github/repo-size/hugooae/Awesome-README-Guide)
+![GitHub code size](https://img.shields.io/github/languages/code-size/hugooae/Awesome-README-Guide)
+```
+
+#### Cómo se ve:
+
+![GitHub Repo stars](https://img.shields.io/github/stars/hugooae/Awesome-README-Guide?style=social)
+![GitHub forks](https://img.shields.io/github/forks/hugooae/Awesome-README-Guide?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/hugooae/Awesome-README-Guide?style=social)
+![GitHub contributors](https://img.shields.io/github/contributors/hugooae/Awesome-README-Guide)
+![GitHub issues](https://img.shields.io/github/issues/hugooae/Awesome-README-Guide)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/hugooae/Awesome-README-Guide)
+
+### Badges de CI/CD
+
+#### Cómo se escribe:
+```markdown
+![GitHub Actions](https://img.shields.io/github/actions/workflow/status/hugooae/Awesome-README-Guide/ci.yml?branch=main)
+![CircleCI](https://img.shields.io/circleci/build/github/hugooae/Awesome-README-Guide)
+![Travis CI](https://img.shields.io/travis/hugooae/Awesome-README-Guide)
+![Codecov](https://img.shields.io/codecov/c/github/hugooae/Awesome-README-Guide)
+```
+
+#### Cómo se ve:
+
+![GitHub Actions](https://img.shields.io/github/actions/workflow/status/hugooae/Awesome-README-Guide/ci.yml?branch=main)
+![CircleCI](https://img.shields.io/circleci/build/github/hugooae/Awesome-README-Guide)
+![Travis CI](https://img.shields.io/travis/hugooae/Awesome-README-Guide)
+![Codecov](https://img.shields.io/codecov/c/github/hugooae/Awesome-README-Guide)
+
+---
+
+## HTML en Markdown
+
+Puedes usar HTML cuando necesites más control sobre el formato.
+
+### Centrar contenido
+
+#### Cómo se escribe:
+```markdown
+<div align="center">
+
+# Título Centrado
+
+**Texto en negrita centrado**
+
+![Imagen](https://via.placeholder.com/300x100)
+
+</div>
+```
+
+#### Cómo se ve:
+
+<div align="center">
+
+# Título Centrado
+
+**Texto en negrita centrado**
+
+![Imagen](https://via.placeholder.com/300x100)
+
+</div>
+
+### Imágenes con tamaño personalizado
+
+#### Cómo se escribe:
+```markdown
+<img src="https://via.placeholder.com/600x200" alt="Imagen grande" width="600">
+<img src="https://via.placeholder.com/300x100" alt="Imagen mediana" width="300">
+<img src="https://via.placeholder.com/150x50" alt="Imagen pequeña" width="150">
+```
+
+#### Cómo se ve:
+
+<img src="https://via.placeholder.com/600x200" alt="Imagen grande" width="600">
+<img src="https://via.placeholder.com/300x100" alt="Imagen mediana" width="300">
+<img src="https://via.placeholder.com/150x50" alt="Imagen pequeña" width="150">
+
+### Imágenes en línea
+
+#### Cómo se escribe:
+```markdown
+<img align="left" width="100" height="100" src="https://via.placeholder.com/100">
+
+Este texto aparece al lado de la imagen. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore 
+et dolore magna aliqua.
+
+<br clear="left"/>
+
+Texto después de limpiar el float.
+```
+
+#### Cómo se ve:
+
+<img align="left" width="100" height="100" src="https://via.placeholder.com/100">
+
+Este texto aparece al lado de la imagen. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+<br clear="left"/>
+
+Texto después de limpiar el float.
+
+### Detalles con estilo
+
+#### Cómo se escribe:
+```markdown
+<details>
+<summary><strong>📚 Ver más información</strong></summary>
+<br>
+
+Contenido con **formato Markdown** completo.
+
+- Lista 1
+- Lista 2
+- Lista 3
+
+```javascript
+const codigo = "también funciona";
+```
+
+</details>
+```
+
+#### Cómo se ve:
+
+<details>
+<summary><strong>📚 Ver más información</strong></summary>
+<br>
+
+Contenido con **formato Markdown** completo.
+
+- Lista 1
+- Lista 2
+- Lista 3
+
+```javascript
+const codigo = "también funciona";
+```
+
+</details>
+
+---
+
+## Keyboard Keys (Teclas)
+
+Para mostrar combinaciones de teclas de forma visual.
+
+#### Cómo se escribe:
+```markdown
+Presiona <kbd>Ctrl</kbd> + <kbd>C</kbd> para copiar.
+
+Usa <kbd>Cmd</kbd> + <kbd>V</kbd> para pegar en Mac.
+
+Para guardar: <kbd>Ctrl</kbd> + <kbd>S</kbd>
+
+Atajo rápido: <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd>
+```
+
+#### Cómo se ve:
+
+Presiona <kbd>Ctrl</kbd> + <kbd>C</kbd> para copiar.
+
+Usa <kbd>Cmd</kbd> + <kbd>V</kbd> para pegar en Mac.
+
+Para guardar: <kbd>Ctrl</kbd> + <kbd>S</kbd>
+
+Atajo rápido: <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd>
+
+---
+
+## Emojis
+
+GitHub soporta emojis usando códigos o directamente.
+
+#### Cómo se escribe:
+```markdown
+:tada: :rocket: :sparkles: :star: :heart: :fire: :zap: :boom:
+
+:white_check_mark: :x: :warning: :bulb: :lock: :key: :mag:
+
+:computer: :iphone: :books: :pencil2: :mailbox: :package:
+
+También puedes usar emojis directamente: 🎉 🚀 ✨ ⭐ ❤️ 🔥
+```
+
+#### Cómo se ve:
+
+:tada: :rocket: :sparkles: :star: :heart: :fire: :zap: :boom:
+
+:white_check_mark: :x: :warning: :bulb: :lock: :key: :mag:
+
+:computer: :iphone: :books: :pencil2: :mailbox: :package:
+
+También puedes usar emojis directamente: 🎉 🚀 ✨ ⭐ ❤️ 🔥
+
+**Lista completa:** [GitHub Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet)
+
+---
+
+## Comparación de Código (Diff)
+
+Para mostrar cambios en código.
+
+#### Cómo se escribe:
+````markdown
+```diff
+function ejemplo() {
+-  return "versión antigua";
++  return "versión nueva";
+}
+
+- código eliminado
++ código añadido
+! código modificado
+# comentario
+```
+````
+
+#### Cómo se ve:
+
+```diff
+function ejemplo() {
+-  return "versión antigua";
++  return "versión nueva";
+}
+
+- código eliminado
++ código añadido
+! código modificado
+# comentario
+```
+
+---
+
+## Comentarios Ocultos
+
+Comentarios que no se muestran en el README renderizado.
+
+#### Cómo se escribe:
+```markdown
+<!-- Este es un comentario que no se verá -->
+
+Este texto sí se ve.
+
+<!-- 
+Este es un comentario
+de múltiples líneas
+que tampoco se verá
+-->
+```
+
+#### Cómo se ve:
+
+<!-- Este es un comentario que no se verá -->
+
+Este texto sí se ve.
+
+<!-- 
+Este es un comentario
+de múltiples líneas
+que tampoco se verá
+-->
+
+---
+
+## Escape de Caracteres Especiales
+
+Cuando necesitas mostrar caracteres especiales literalmente.
+
+#### Cómo se escribe:
+```markdown
+\* No es una lista
+\# No es un título
+\[No es un enlace](url)
+\`No es código\`
+
+Para mostrar una barra invertida: \\
+```
+
+#### Cómo se ve:
+
+\* No es una lista
+\# No es un título
+\[No es un enlace](url)
+\`No es código\`
+
+Para mostrar una barra invertida: \\
+
+---
+
+## Listas de Definición
+
+#### Cómo se escribe:
+```markdown
+<dl>
+<dt>Término 1</dt>
+<dd>Definición del término 1</dd>
+
+<dt>Término 2</dt>
+<dd>Definición del término 2</dd>
+
+<dt>API</dt>
+<dd>Application Programming Interface - Interfaz de programación de aplicaciones</dd>
+</dl>
+```
+
+#### Cómo se ve:
+
+<dl>
+<dt>Término 1</dt>
+<dd>Definición del término 1</dd>
+
+<dt>Término 2</dt>
+<dd>Definición del término 2</dd>
+
+<dt>API</dt>
+<dd>Application Programming Interface - Interfaz de programación de aplicaciones</dd>
+</dl>
+
+---
+
+## Secciones con Anclajes Personalizados
+
+#### Cómo se escribe:
+```markdown
+## Mi Sección {#mi-ancla-personalizada}
+
+Ahora puedes enlazar a esta sección con: [Ir a Mi Sección](#mi-ancla-personalizada)
+
+O en HTML:
+<h2 id="seccion-html">Sección con HTML</h2>
+
+Enlace: [Ir a Sección HTML](#seccion-html)
+```
+
+#### Cómo se ve:
+
+## Mi Sección {#mi-ancla-personalizada}
+
+Ahora puedes enlazar a esta sección con: [Ir a Mi Sección](#mi-ancla-personalizada)
+
+<h2 id="seccion-html">Sección con HTML</h2>
+
+Enlace: [Ir a Sección HTML](#seccion-html)
+
+---
+
+## Alertas Personalizadas con HTML
+
+#### Cómo se escribe:
+```markdown
+<table>
+<tr>
+<td>
+
+**⚠️ ADVERTENCIA**
+
+Este es un mensaje de advertencia personalizado con más control sobre el estilo.
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td bgcolor="#d1ecf1">
+
+**ℹ️ INFORMACIÓN**
+
+Cuadro de información con fondo de color.
+
+</td>
+</tr>
+</table>
+```
+
+#### Cómo se ve:
+
+<table>
+<tr>
+<td>
+
+**⚠️ ADVERTENCIA**
+
+Este es un mensaje de advertencia personalizado con más control sobre el estilo.
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td bgcolor="#d1ecf1">
+
+**ℹ️ INFORMACIÓN**
+
+Cuadro de información con fondo de color.
+
+</td>
+</tr>
+</table>
+
+---
+
 ## Ejemplos por Tipo de Proyecto
 
 Este repositorio incluye plantillas específicas en la carpeta `templates/`:
@@ -989,6 +1675,8 @@ Este repositorio incluye plantillas específicas en la carpeta `templates/`:
 - **APIs REST** - [rest-api.md](templates/rest-api.md)
 - **Herramientas CLI** - [cli-app.md](templates/cli-app.md)
 - **Plugins y Extensiones** - [plugin.md](templates/plugin.md)
+- **Proyectos de Machine Learning** - [ml-project.md](templates/ml-project.md)
+- **Aplicaciones Móviles** - [mobile-app.md](templates/mobile-app.md)
 
 ---
 
